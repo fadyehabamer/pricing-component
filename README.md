@@ -1,2 +1,2 @@
 # pricing component
-professional pricing section using css3
+> professional pricing from **FrontEnd Mentor** section using css3
