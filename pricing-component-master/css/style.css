@@ -1,0 +1,255 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+/* CSS VARIABLES  */
+:root {
+  --primaryColor: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --primaryColor-alt: linear-gradient(
+    to right,
+    hsl(237, 63%, 64%),
+    hsl(236, 72%, 79%)
+  );
+  --mainBlue: hsl(233, 13%, 49%);
+  --lightBlue: hsl(234, 14%, 74%);
+  --lightBlue-alt: hsl(240, 78%, 98%);
+  --darkBlue: hsl(232, 13%, 33%);
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --lightShadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+  --mainSpacing: 0.3rem;
+  --mainTransition: all 0.5s ease-in;
+}
+
+/* GENERAL RESETS */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  background: var(--lightBlue-alt);
+}
+
+/* GLOBAL STYLES */
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  letter-spacing: var(--mainSpacing);
+}
+
+h2 {
+  font-size: 2.4;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 1170px;
+  max-width: 85vw;
+  margin: 0 auto;
+}
+
+/* BUTTON CSS */
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 1.2rem 3rem;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.btn-blue {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border-color: var(--mainBlue);
+  transition: var(--mainTransition);
+}
+
+.btn-blue:hover {
+  background: var(--mainWhite);
+  color: var(--mainBlue);
+}
+
+.btn-white {
+  background: var(--mainWhite);
+  border-color: var(--mainWhite);
+}
+
+.btn-white:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+/* PRICING PLANE STYLES */
+.pricing {
+  padding: 8rem 0;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.pricing-heading {
+  color: var(--mainBlue);
+}
+
+.pricing-system {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-control-container {
+  display: inline-block;
+  width: 7rem;
+  padding: 0.3rem 0;
+  margin: 0 2rem 0 2rem;
+  background: var(--primaryColor);
+  border-radius: 50px;
+  box-shadow: var(--lightShadow);
+}
+
+.plan-control {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background: var(--mainWhite);
+  border-radius: 50%;
+  transform: translateX(32px);
+  transition: var(--mainTransition);
+}
+
+.annually {
+  transform: translateX(10px);
+}
+
+.monthly {
+  transform: translateX(32px);
+}
+
+.system {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--lightBlue);
+}
+
+.pricing-plans {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.pricing-plan {
+  background: var(--mainWhite);
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  box-shadow: var(--lightShadow);
+}
+
+.pro {
+  background: var(--primaryColor);
+}
+
+.pro .plan-title,
+.pro .plan-value,
+.pro .plan-list-item {
+  color: var(--mainWhite);
+}
+
+.plan-title,
+.plan-list-item {
+  font-size: 1.5rem;
+  color: var(--mainBlue);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.plan-value {
+  font-size: 6.5rem;
+  font-weight: 700;
+  color: var(--darkBlue);
+}
+
+.currency {
+  font-size: 4rem;
+}
+
+.plan-list {
+  margin: 3rem 0 3rem 0;
+}
+
+.plan-list-item {
+  border-bottom: 1px solid var(--lightBlue);
+  padding: 1.5rem 1rem;
+}
+
+.plan-list-item:first-child {
+  border-top: 1px solid var(--lightBlue);
+}
+
+/* MEDIA QUERY FOR RESPONSIVE */
+
+@media screen and (min-width: 768px) {
+  .pricing-plans {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .pricing-plan {
+    flex: 0 0 calc(50% - 2rem);
+  }
+
+  .pro {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pricing-plans {
+    flex-wrap: nowrap;
+  }
+
+  .pricing-plan {
+    flex: 0 0 33.333%;
+  }
+
+  .pro {
+    order: 1;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .master {
+    order: 2;
+  }
+}
